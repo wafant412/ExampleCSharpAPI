@@ -1,0 +1,7 @@
+@TaskManagementAPI_HostAddress = https://localhost:5263
+
+GET {{TaskManagementAPI_HostAddress}}/api/tasks
+Accept: application/json
+Authorization: Bearer <your_jwt_token>
+
+###
