@@ -53,12 +53,12 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure middleware
-if (app.Environment.IsDevelopment())
+app.UseSwagger();
+app.UseSwaggerUI(options =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+    options.RoutePrefix = "swagger"; // Access via /swagger
+});
 
 app.UseAuthentication();
 app.UseAuthorization();
